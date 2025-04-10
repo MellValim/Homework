@@ -27,18 +27,18 @@ media_06, desvio_06 = randomwalk(steps, simulations, p=0.6)
 passos = np.arange(steps + 1)
 
 
-plt.plot(passos, media_05, label='Média (p=0.5)', color='magenta')
-plt.plot(passos, media_06, label='Média (p=0.6)', color='purple')
-plt.xlabel('Número de passos')
-plt.ylabel('Média da posição')
-plt.title('Média da posição em função dos passos')
-plt.show()
+plt.figure(figsize=(10, 6))
 
-plt.plot(passos, desvio_05, label='Desvio (p=0.5)', color='magenta')
-plt.plot(passos, desvio_06, label='Desvio (p=0.6)', color='purple')
+plt.plot(passos, media_05, label='Média (p=0.5)', color='magenta')
+plt.fill_between(passos, media_05 - desvio_05, media_05 + desvio_05, color='magenta', alpha=0.2, label='±1σ (p=0.5)')
+
+plt.plot(passos, media_06, label='Média (p=0.6)', color='blue')
+plt.fill_between(passos, media_06 - desvio_06, media_06 + desvio_06, color='blue', alpha=0.2, label='±1σ (p=0.6)')
+
 plt.xlabel('Número de passos')
-plt.ylabel('Desvio padrão da posição')
-plt.title('Desvio padrão da posição em função dos passos')
+plt.ylabel('Posição média')
+plt.title('Média e desvio padrão da posição em função dos passos')
+plt.tight_layout()
 plt.show()
 
 
