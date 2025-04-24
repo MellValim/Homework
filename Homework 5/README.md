@@ -1,0 +1,1 @@
+O método numérico mais adequado depende da situação, dos recursos disponíveis e a acurácia desejada. Para uma estimativa rápido, o método de euler pode se mostrar mais adequado. Para uma maior acurácia, o método mais adequado é o Runge Kutta de quarta ordem ou superior.
